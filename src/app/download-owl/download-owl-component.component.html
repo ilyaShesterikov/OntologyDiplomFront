@@ -1,0 +1,60 @@
+
+<div *ngIf="currentFile" class="progress">
+  <div
+    class="progress-bar progress-bar-info progress-bar-striped"
+    role="progressbar"
+    attr.aria-valuenow="{{ progress }}"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    [ngStyle]="{ width: progress + '%' }"
+  >
+    {{ progress }}%
+  </div>
+</div>
+
+<label class="btn btn-default">
+  <input type="file" (change)="selectFile($event)" />
+</label>
+
+<button class="btn btn-success" ng-click="count = true"  [disabled]="!selectedFiles" (click)="upload()">
+  Upload
+</button>
+
+<button *ngIf="success == false" class="btn btn-disabled" [disabled]="!selectedFiles" (click)="upload()">
+  Next
+</button>
+<a *ngIf="success == true" class="btn btn-primary" href="create-db">Next</a>
+
+
+<div *ngIf="success == false && !success == undefined">
+  {{ errorMessage }}
+</div>
+<div *ngIf="success == false  && !success == undefined" class="alert alert-light" role="alert"><strong>Danger!</strong> {{ errorMessage }}.</div>
+
+<div *ngIf="success == true" class="card">
+  <div *ngIf="success == true" class="card-header">List of Classes</div>
+  <ul
+    class="list-group list-group-flush"
+  >
+    <li *ngFor="let clazz of downloadAnswer.classes" class="list-group-item">{{clazz}}
+    </li>
+  </ul>
+
+
+  <div *ngIf="success == true" class="card-header">List of Object properties</div>
+  <ul
+    class="list-group list-group-flush"
+  >
+    <li *ngFor="let clazz of downloadAnswer.oprops" class="list-group-item">{{clazz}}
+    </li>
+  </ul>
+
+  <div class="card-header">List of Data properties</div>
+  <ul
+    class="list-group list-group-flush"
+  >
+    <li *ngFor="let clazz of downloadAnswer.dprops" class="list-group-item">{{clazz}}
+    </li>
+  </ul>
+</div>
+

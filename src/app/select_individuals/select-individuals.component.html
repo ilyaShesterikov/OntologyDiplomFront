@@ -1,0 +1,85 @@
+
+<div>
+  <h3 class="sp">Sparql query:</h3>
+  <textarea cols="20" rows="5" class="form-control" id="query" required
+           name="query" [(ngModel)]="sparqlQuery">
+  </textarea>
+  <h3 class="sp">Generated sql query:</h3>
+  <textarea cols="20" rows="5" class="form-control" id="sqlquery" required
+            name="query" >
+  </textarea>
+  <button class="btn btn-success" (click)="execute(sparqlQuery)">
+    Execute
+  </button>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th >id_name</th>
+    <th >dprop2</th>
+    <th >dprop5</th>
+    <th >ref2_1to1_1</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="">
+    <td >first_individual2_1</td>
+    <td >232</td>
+    <td>string1</td>
+    <td >individual1_1</td>
+  </tr>
+  <tr >
+    <td>second_individual2_1</td>
+    <td >166</td>
+    <td >string2</td>
+    <td ></td>
+  </tr>
+  <tr >
+    <td >4th_individual2_1</td>
+    <td >82</td>
+    <td >string4</td>
+    <td >individual1</td>
+  </tr>
+  <tr >
+    <td>third_individual2_1</td>
+    <td>11</td>
+    <td >string3</td>
+    <td >individual1_1</td>
+  </tr>
+  </tbody>
+</table>
+
+<!--<table class="table table-bordered">-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th *ngFor="let clazz of downloadAnswer.col" class="list-group-item">{{clazz}}</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let clazz of downloadAnswer.fields;let i of " class="list-group-item">-->
+
+<!--    <td *ngFor="let int of this.listMap[i]" class="list-group-item">-->
+<!--      <div *ngIf="this.listMap[i] == downloadAnswer.col[i]">{{this.listMap[i]}}</div>-->
+<!--      <div *ngIf="this.listMap[i] != downloadAnswer.col[i]"></div>-->
+
+<!--    </td>-->
+
+<!--  </tr>-->
+
+<!--  </tbody>-->
+<!--</table>-->
+<!--<div class="alert alert-danger" role="alert">{{ message }}</div>-->
+
+<!--<div class="card">-->
+<!--  <div class="card-header">List of Files</div>-->
+<!--  <ul-->
+<!--    class="list-group list-group-flush"-->
+<!--    *ngFor="let file of fileInfos | async"-->
+<!--  >-->
+<!--    <li class="list-group-item">-->
+<!--      <a href="{{ file.url }}">{{ file.name }}</a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</div>-->
+

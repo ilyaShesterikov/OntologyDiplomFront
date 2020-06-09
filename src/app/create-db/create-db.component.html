@@ -1,0 +1,44 @@
+
+<button class="btn btn-info"  (click)="create()">
+  Create tables
+</button>
+
+<button *ngIf="creationSuccess == false" class="btn btn-disabled" (click)="insert()">
+  Insert individuals
+</button>
+<button *ngIf="creationSuccess == true" class="btn btn-primary" (click)="insert()">
+  Insert individuals
+</button>
+<a *ngIf="insertSuccess == true" class="btn btn-primary" href="select-individuals">Next</a>
+<div *ngIf="creationSuccess == true" class="alert alert-success" role="alert"><strong>Success!</strong> Tables created.</div>
+<div *ngIf="insertSuccess == true" class="alert alert-success" role="alert"><strong>Success!</strong> Individuals inserted.</div>
+<div *ngIf="creationSuccess == false" class="alert alert-danger" role="alert"><strong>Danger! Tables not created : </strong> {{ errorMessage }}.</div>
+<div *ngIf="insertSuccess == false" class="alert alert-danger" role="alert"><strong>Danger! Individuals not inserted : </strong> {{ errorMessage }}.</div>
+
+<div  class="card">
+  <div class="card-header">List of Classes</div>
+  <ul
+    class="list-group list-group-flush"
+  >
+    <li *ngFor="let clazz of classes" class="list-group-item">{{clazz}}
+    </li>
+  </ul>
+
+
+  <div class="card-header">List of Object properties</div>
+  <ul
+    class="list-group list-group-flush"
+  >
+    <li *ngFor="let clazz of oprops" class="list-group-item">{{clazz}}
+    </li>
+  </ul>
+
+  <div class="card-header">List of Data properties</div>
+  <ul
+    class="list-group list-group-flush"
+  >
+    <li *ngFor="let clazz of dprops" class="list-group-item">{{clazz}}
+    </li>
+  </ul>
+</div>
+
